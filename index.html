@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <h1 id="Message"></h1>
+</body>
+<script>
+    const queryParams = new URLSearchParams(window.location.search);
+    var a = queryParams.get('Rate')
+    var b = queryParams.get('weight')
+    var c_per = queryParams.get('Making')
+    var d_per = queryParams.get('tax')
+    var e = queryParams.get('purity')
+
+    c = a*(c_per/100)
+    d = a*(d_per/100)
+    console.log(c)
+    console.log(d)
+    var Price = Number(a) + Number(c) + Number(d) * Number(b)
+    console.log(Price)
+    document.getElementById("Message").innerHTML = "Total Price is " + Price
+</script>
+</html>
